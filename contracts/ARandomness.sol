@@ -8,7 +8,7 @@ abstract contract ARandomness {
     // large prime
     uint256 public immutable prime;
     // adjust for block finality
-    uint16 public immutable iterations;
+    uint256 public immutable iterations;
     // address -> vdf seed
     mapping(address => uint256) public seeds;
     // increment nonce to increase entropy

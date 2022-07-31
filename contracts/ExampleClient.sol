@@ -15,15 +15,16 @@ contract ExampleClient is ARandomness {
         ARandomness(_prime, _iterations)
     {}
 
-    function prepareNewRandom() external {
-        _createSeed();
+    function generate() external payable {
+        require(msg.value == 1 ether, "invalid payment");
+        (, seeds[msg.sender]) = rng.getRandom();
     }
 
-    function newRandom(uint256 _proof) external {
+    function use(uint256 _proof) external {
         require(_verify(_proof), "invalid proof");
-        uint256 _randomness;
+        uint256 _randomness = _proof;
         uint256 _random;
-        (_randomness, _random) = rng.getRandom(0, seeds[msg.sender]);
+        (_randomness, _random) = rng.getRandom(_proof, seeds[msg.sender]);
         console.log("here is your random number:", _random);
         (_randomness, _random) = rng.getRandomRange(0, 100, seeds[msg.sender]);
         console.log("here is another one between 0 and 100:", _random);
