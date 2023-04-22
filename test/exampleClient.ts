@@ -16,8 +16,6 @@ import sloth from "./slothVDF";
 let contractUnderTestFactory: ContractFactory;
 let contractUnderTest: ExampleClient;
 
-const randomnessFujiAddress = "0x177ABa2ADb7570c70ca3E2760cd89E1823c29450";
-
 const prime: bigint = BigInt(
   "36118670070795088065488585428721163376455498422707"
 );
@@ -35,12 +33,16 @@ beforeEach(async function () {
 
 describe("ExampleClient deployment", function () {
   beforeEach(async function () {
+    // deploy randomness library contract
+    const mockRandomnessFactory = await ethers.getContractFactory("Randomness");
+    const randomnessLibrary = await mockRandomnessFactory.deploy();
+    await randomnessLibrary.deployed();
     // deploy contract under test
     contractUnderTestFactory = await ethers.getContractFactory(
       "ExampleClient",
       {
         libraries: {
-          Randomness: randomnessFujiAddress,
+          Randomness: randomnessLibrary.address,
         },
       }
     );
@@ -65,12 +67,16 @@ describe("ExampleClient deployment", function () {
 
 describe("ExampleClient randomness method tests", function () {
   beforeEach(async function () {
+    // deploy randomness library contract
+    const mockRandomnessFactory = await ethers.getContractFactory("Randomness");
+    const randomnessLibrary = await mockRandomnessFactory.deploy();
+    await randomnessLibrary.deployed();
     // deploy contract under test
     contractUnderTestFactory = await ethers.getContractFactory(
       "ExampleClient",
       {
         libraries: {
-          Randomness: randomnessFujiAddress,
+          Randomness: randomnessLibrary.address,
         },
       }
     );
@@ -87,14 +93,16 @@ describe("ExampleClient randomness method tests", function () {
       (await contractUnderTest.iterations()).toString()
     );
     // act
-    await contractUnderTest.prepareNewRandom();
+    await contractUnderTest.generate({
+      value: ethers.utils.parseEther("1.0"),
+    });
     const seed = BigInt(
       (await contractUnderTest.seeds(owner.address)).toString()
     );
     let start = Date.now();
     const proof = sloth.compute(seed, prime, iterations);
     console.log("compute time", Date.now() - start, "ms", "vdf proof", proof);
-    await contractUnderTest.newRandom(proof);
+    await contractUnderTest.use(proof);
     // assert
     const actualRandom = await contractUnderTest.currentRandom();
     expect(actualRandom).greaterThanOrEqual(0);

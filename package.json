@@ -3,6 +3,12 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^1.0.1",
     "hardhat": "^2.10.1",
-    "dotenv": "^16.0.1"
+    "@defi-wonderland/smock": "^2.3.4",
+    "@dlsl/hardhat-markup": "^1.0.0-rc.7",
+    "@nomiclabs/hardhat-solhint": "^3.0.1",
+    "@primitivefi/hardhat-dodoc": "^0.2.3",
+    "dotenv": "^16.0.1",
+    "hardhat-contract-sizer": "^2.8.0",
+    "solidity-docgen": "^0.6.0-beta.35"
   }
 }

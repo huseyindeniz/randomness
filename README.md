@@ -62,8 +62,18 @@ await ethers.getContractFactory("ExampleClient", {
 
 ### Contract Addresses
 
-- Avalanche Network: 0x...
-- Avalanche Fuji C-Chain: 0x177ABa2ADb7570c70ca3E2760cd89E1823c29450
+- Avalanche: soon
+- Binance Smart Chain: soon
+- Polygon: soon
+- Avalanche Fuji C-Chain: [0xf4FF6bd06181f7893BFb5dD49aBe9566ae37C736](https://testnet.snowtrace.io/address/0x5DC92438078bA83af1d19ccD94129d10227204FC)
+- Binance Smart Chain Testnet: [0x177ABa2ADb7570c70ca3E2760cd89E1823c29450](https://testnet.bscscan.com/address/0xf4FF6bd06181f7893BFb5dD49aBe9566ae37C736)
+- Polygon Mumbai Testnet: [0x177ABa2ADb7570c70ca3E2760cd89E1823c29450](https://testnet.snowtrace.io/address/0x5DC92438078bA83af1d19ccD94129d10227204FC)
+
+### Projects Using Randomness
+
+- [WhitelistRaffle.avax.sh](https://whitelistraffle.avax.sh)
+
+ps: you can create a pull request to add your project
 
 ## Credits
 

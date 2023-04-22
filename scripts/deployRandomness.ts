@@ -22,3 +22,7 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+// Avalanche Testnet: 0xf4FF6bd06181f7893BFb5dD49aBe9566ae37C736
+// BSC Testnet: 0x177ABa2ADb7570c70ca3E2760cd89E1823c29450
+// Polygon Testnet: 0x177ABa2ADb7570c70ca3E2760cd89E1823c29450
