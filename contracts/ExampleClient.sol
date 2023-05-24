@@ -1,6 +1,6 @@
 //SPDX-License-Identifier: MIT
 // contracts//ARandomness.sol
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.7;
 
 import "./libraries/Randomness.sol";
 import "./ARandomness.sol";
@@ -11,9 +11,10 @@ contract ExampleClient is ARandomness {
     Randomness.RNG internal rng;
     uint8 public currentRandom;
 
-    constructor(uint256 _prime, uint16 _iterations)
-        ARandomness(_prime, _iterations)
-    {}
+    constructor(
+        uint256 _prime,
+        uint16 _iterations
+    ) ARandomness(_prime, _iterations) {}
 
     function generate() external payable {
         require(msg.value == 1 ether, "invalid payment");

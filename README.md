@@ -68,12 +68,12 @@ await ethers.getContractFactory("ExampleClient", {
 
 ### Contract Addresses
 
-- Avalanche: soon
-- Binance Smart Chain: soon
-- Polygon: soon
-- Avalanche Fuji C-Chain: [0xf4FF6bd06181f7893BFb5dD49aBe9566ae37C736](https://testnet.snowtrace.io/address/0x5DC92438078bA83af1d19ccD94129d10227204FC)
-- Binance Smart Chain Testnet: [0x177ABa2ADb7570c70ca3E2760cd89E1823c29450](https://testnet.bscscan.com/address/0xf4FF6bd06181f7893BFb5dD49aBe9566ae37C736)
-- Polygon Mumbai Testnet: [0x177ABa2ADb7570c70ca3E2760cd89E1823c29450](https://testnet.snowtrace.io/address/0x5DC92438078bA83af1d19ccD94129d10227204FC)
+- Avalanche Fuji Testnet: [0xf4ff6bd06181f7893bfb5dd49abe9566ae37c736](https://testnet.snowtrace.io/address/0xf4ff6bd06181f7893bfb5dd49abe9566ae37c736)
+- Binance Smart Chain Testnet: [0x177aba2adb7570c70ca3e2760cd89e1823c29450](https://testnet.bscscan.com/address/0x177aba2adb7570c70ca3e2760cd89e1823c29450)
+- Polygon Mumbai Testnet: [0x177aba2adb7570c70ca3e2760cd89e1823c29450](https://mumbai.polygonscan.com/address/0x177aba2adb7570c70ca3e2760cd89e1823c29450)
+- Avalanche C-Chain: [0x177aba2adb7570c70ca3e2760cd89e1823c29450](https://snowtrace.io/address/0x177aba2adb7570c70ca3e2760cd89e1823c29450)
+- Binance Smart Chain Mainnet: [0x177aba2adb7570c70ca3e2760cd89e1823c29450](https://bscscan.com/address/0x177aba2adb7570c70ca3e2760cd89e1823c29450)
+- Polygon Mainnet: [0x177aba2adb7570c70ca3e2760cd89e1823c29450](https://polygonscan.com/address/0x177aba2adb7570c70ca3e2760cd89e1823c29450)
 
 ### Projects Using Randomness
 
