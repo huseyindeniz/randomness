@@ -77,7 +77,7 @@ await ethers.getContractFactory("ExampleClient", {
 
 ### Projects Using Randomness
 
-- [WhitelistRaffle.avax.sh](https://whitelistraffle.avax.sh)
+- [Randora](https://randora.avax.sh)
 
 ps: you can create a pull request to add your project
 
